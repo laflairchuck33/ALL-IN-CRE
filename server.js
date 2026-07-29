@@ -5,15 +5,13 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
 const CHUCK_CHAT_ID = '865040112';
-const WEBHOOK_URL = process.env.OPENCLAW_WEBHOOK || '';
 const FUB_API_KEY = process.env.FUB_API_KEY || 'fka_0GFCDfLjPzz6wKIQBfusgvYzNDMDPo0FOx';
 const FUB_AUTH = Buffer.from(FUB_API_KEY + ':').toString('base64');
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8446603163:AAGfzkQ7eT8ZiBnw6Bq6E2n4vz5AHDF9OjI';
 
 async function sendTelegram(text) {
   try {
     const { default: fetch } = await import('node-fetch');
-    const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8446603163:AAGfzkQ7eT8ZiBnw6Bq6E2n4vz5AHDF9OjI';
-    if (!BOT_TOKEN) return;
     await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -22,7 +20,6 @@ async function sendTelegram(text) {
   } catch(e) { console.error('Telegram error:', e.message); }
 }
 
-// Add lead to Sandra's Follow Up Boss
 async function addToFUB(d) {
   try {
     const { default: fetch } = await import('node-fetch');
@@ -31,10 +28,9 @@ async function addToFUB(d) {
       lastName: d.name ? d.name.split(' ').slice(1).join(' ') : '',
       emails: d.email ? [{ value: d.email }] : [],
       phones: d.phone ? [{ value: d.phone }] : [],
-      stage: 'New Lead',
+      stage: 'Lead',
       source: 'allincre.co',
-      tags: [d.loanType || 'CRE Lead'],
-      notes: [
+      description: [
         `Loan Type: ${d.loanType || 'N/A'}`,
         `Loan Amount: ${d.loanAmount || 'N/A'}`,
         `Property Type: ${d.propType || 'N/A'}`,
@@ -49,28 +45,13 @@ async function addToFUB(d) {
       method: 'POST',
       headers: {
         'Authorization': 'Basic ' + FUB_AUTH,
-        'Content-Type': 'application/json',
-        'X-System': 'All In CRE',
-        'X-System-Key': FUB_API_KEY
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(payload)
     });
     const result = await res.json();
-    console.log('FUB lead created:', result.id || result);
+    console.log('FUB result:', JSON.stringify(result));
   } catch(e) { console.error('FUB error:', e.message); }
-}
-
-// Forward to OpenClaw webhook for email sending
-async function forwardToWebhook(data) {
-  if (!WEBHOOK_URL) return;
-  try {
-    const { default: fetch } = await import('node-fetch');
-    await fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ event: 'allincre_lead', data })
-    });
-  } catch(e) { console.error('Webhook error:', e.message); }
 }
 
 app.post('/api/lead', async (req, res) => {
@@ -93,11 +74,9 @@ app.post('/api/lead', async (req, res) => {
 
   await sendTelegram(tgMsg);
   await addToFUB(d);
-  await forwardToWebhook(d);
 
   res.json({ ok: true });
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('allincre server running on port ' + PORT));
-// redeployed Wed Jul 29 02:00:07 EDT 2026
