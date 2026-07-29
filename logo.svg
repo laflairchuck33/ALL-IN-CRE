@@ -1,0 +1,7 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 90' width='220' height='66'>
+  <rect width='300' height='90' fill='transparent'/>
+  <text x='150' y='28' font-family='Arial Black,sans-serif' font-size='28' font-weight='900' fill='white' text-anchor='middle' letter-spacing='3'>ALL IN</text>
+  <rect x='0' y='35' width='300' height='26' fill='#2255cc'/>
+  <text x='150' y='53' font-family='Arial,sans-serif' font-size='13' font-weight='700' fill='white' text-anchor='middle' letter-spacing='6'>COMMERCIAL</text>
+  <text x='150' y='82' font-family='Arial Black,sans-serif' font-size='20' font-weight='900' fill='white' text-anchor='middle' letter-spacing='8'>LENDING</text>
+</svg>

@@ -22,8 +22,8 @@ a{text-decoration:none;color:inherit;}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.97);backdrop-filter:blur(8px);padding:0 5%;height:64px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-size:1.4rem;font-weight:800;color:var(--white);letter-spacing:1px;}
-.nav-logo span{color:var(--gold);}
+.nav-logo{display:flex;align-items:center;}
+.nav-logo img{height:44px;width:auto;}
 .nav-cta{background:#ffffff;color:#111111;font-weight:700;padding:10px 22px;border-radius:6px;font-size:.9rem;transition:.2s;}
 .nav-cta:hover{background:#e0e0e0;}
 
@@ -122,13 +122,14 @@ footer strong{color:rgba(255,255,255,0.8);}
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">ALL IN <span>CRE</span></div>
+  <div class="nav-logo"><img src="/logo.svg" alt="All In Commercial Lending"/></div>
   <a href="#contact" class="nav-cta">Get Funded →</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
+    <div style="margin-bottom:28px;"><img src="/logo.svg" alt="All In Commercial Lending" style="height:80px;width:auto;"/></div>
     <div class="hero-badge">Commercial Lending is Easier than You Think</div>
     <h1>Fund Your Next<br/><span>Commercial Deal</span><br/>Fast & Simple</h1>
     <p>From SBA loans to bridge financing — we close commercial deals other lenders pass on. Get a quote in 24 hours.</p>
