@@ -6,6 +6,8 @@ app.use(express.static(path.join(__dirname)));
 
 const CHUCK_CHAT_ID = '865040112';
 const WEBHOOK_URL = process.env.OPENCLAW_WEBHOOK || '';
+const FUB_API_KEY = process.env.FUB_API_KEY || 'fka_0GFCDfLjPzz6wKIQBfusgvYzNDMDPo0FOx';
+const FUB_AUTH = Buffer.from(FUB_API_KEY + ':').toString('base64');
 
 async function sendTelegram(text) {
   try {
@@ -18,6 +20,44 @@ async function sendTelegram(text) {
       body: JSON.stringify({ chat_id: CHUCK_CHAT_ID, text, parse_mode: 'HTML' })
     });
   } catch(e) { console.error('Telegram error:', e.message); }
+}
+
+// Add lead to Sandra's Follow Up Boss
+async function addToFUB(d) {
+  try {
+    const { default: fetch } = await import('node-fetch');
+    const payload = {
+      firstName: d.name ? d.name.split(' ')[0] : '',
+      lastName: d.name ? d.name.split(' ').slice(1).join(' ') : '',
+      emails: d.email ? [{ value: d.email }] : [],
+      phones: d.phone ? [{ value: d.phone }] : [],
+      stage: 'New Lead',
+      source: 'allincre.co',
+      tags: [d.loanType || 'CRE Lead'],
+      notes: [
+        `Loan Type: ${d.loanType || 'N/A'}`,
+        `Loan Amount: ${d.loanAmount || 'N/A'}`,
+        `Property Type: ${d.propType || 'N/A'}`,
+        `State: ${d.state || 'N/A'}`,
+        `Purchase Price: ${d.price || 'N/A'}`,
+        `Credit Score: ${d.credit || 'N/A'}`,
+        `Timeline: ${d.timeline || 'N/A'}`,
+        `Scenario: ${d.notes || 'N/A'}`
+      ].join('\n')
+    };
+    const res = await fetch('https://api.followupboss.com/v1/people', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Basic ' + FUB_AUTH,
+        'Content-Type': 'application/json',
+        'X-System': 'All In CRE',
+        'X-System-Key': FUB_API_KEY
+      },
+      body: JSON.stringify(payload)
+    });
+    const result = await res.json();
+    console.log('FUB lead created:', result.id || result);
+  } catch(e) { console.error('FUB error:', e.message); }
 }
 
 // Forward to OpenClaw webhook for email sending
@@ -52,6 +92,7 @@ app.post('/api/lead', async (req, res) => {
       `🕐 ${new Date().toLocaleString('en-US', {timeZone:'America/Los_Angeles'})} PT`;
 
   await sendTelegram(tgMsg);
+  await addToFUB(d);
   await forwardToWebhook(d);
 
   res.json({ ok: true });
