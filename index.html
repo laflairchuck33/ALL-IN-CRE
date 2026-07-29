@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>All In CRE | Commercial Real Estate Lending</title>
+<meta name="description" content="Commercial Real Estate loans made simple. SBA, Bridge, Multifamily, Construction and more. Get funded fast with Sandra Navarro."/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0f1f45;
+  --navy2:#1a2e5a;
+  --gold:#c9a84c;
+  --gold2:#e8c86a;
+  --white:#ffffff;
+  --light:#f4f6fb;
+  --gray:#666;
+  --dark:#1a1a2e;
+}
+body{font-family:'Segoe UI',Arial,sans-serif;color:var(--dark);background:#fff;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,31,69,0.97);backdrop-filter:blur(8px);padding:0 5%;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:1.4rem;font-weight:800;color:var(--white);letter-spacing:1px;}
+.nav-logo span{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy);font-weight:700;padding:10px 22px;border-radius:6px;font-size:.9rem;transition:.2s;}
+.nav-cta:hover{background:var(--gold2);}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,#1a3a7a 60%,#0a1628 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 5% 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero-inner{max-width:800px;position:relative;}
+.hero-badge{display:inline-block;background:rgba(201,168,76,0.15);border:1px solid var(--gold);color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:2px;padding:6px 18px;border-radius:50px;margin-bottom:24px;text-transform:uppercase;}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:20px;}
+.hero h1 span{color:var(--gold);}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,0.8);max-width:580px;margin:0 auto 36px;line-height:1.7;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--gold);color:var(--navy);font-weight:800;font-size:1rem;padding:16px 36px;border-radius:8px;transition:.2s;border:none;cursor:pointer;}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-2px);}
+.btn-secondary{background:transparent;color:var(--white);font-weight:700;font-size:1rem;padding:16px 36px;border-radius:8px;border:2px solid rgba(255,255,255,0.4);transition:.2s;cursor:pointer;}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+.hero-stats{display:flex;gap:40px;justify-content:center;margin-top:52px;flex-wrap:wrap;}
+.stat{text-align:center;}
+.stat-num{font-size:2rem;font-weight:900;color:var(--gold);}
+.stat-label{font-size:.8rem;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+
+/* SECTION */
+section{padding:80px 5%;}
+.section-label{font-size:.78rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:var(--navy);margin-bottom:14px;}
+.section-sub{font-size:1rem;color:var(--gray);max-width:560px;line-height:1.7;}
+.section-header{margin-bottom:50px;}
+
+/* LOAN TYPES */
+.loans{background:var(--light);}
+.loans-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+.loan-card{background:var(--white);border-radius:12px;padding:28px 24px;border:1px solid #e0e6f0;transition:.25s;cursor:pointer;}
+.loan-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,31,69,.12);border-color:var(--gold);}
+.loan-icon{font-size:2rem;margin-bottom:14px;}
+.loan-card h3{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:8px;}
+.loan-card p{font-size:.88rem;color:var(--gray);line-height:1.6;}
+.loan-tag{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-top:12px;}
+.tag-green{background:#e8f5e9;color:#2e7d32;}
+.tag-blue{background:#e3f2fd;color:#1565c0;}
+.tag-orange{background:#fff3e0;color:#e65100;}
+
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;margin-top:48px;}
+.step{text-align:center;padding:32px 20px;}
+.step-num{width:52px;height:52px;background:var(--navy);color:var(--gold);font-size:1.3rem;font-weight:900;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+.step h3{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:8px;}
+.step p{font-size:.88rem;color:var(--gray);line-height:1.6;}
+
+/* AGENT SECTION */
+.agent{background:var(--navy);color:var(--white);}
+.agent-inner{display:flex;gap:60px;align-items:center;max-width:1000px;margin:0 auto;flex-wrap:wrap;}
+.agent-photo{width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,#2a4080,#1a2e5a);border:4px solid var(--gold);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:5rem;overflow:hidden;}
+.agent-photo img{width:100%;height:100%;object-fit:cover;}
+.agent-info{flex:1;min-width:260px;}
+.agent-info .section-label{color:var(--gold);}
+.agent-info h2{font-size:2rem;font-weight:900;color:var(--white);margin-bottom:6px;}
+.agent-title{color:var(--gold);font-weight:700;font-size:1rem;margin-bottom:16px;}
+.agent-info p{color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:24px;}
+.agent-contacts{display:flex;flex-direction:column;gap:10px;}
+.agent-contact{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:.95rem;}
+.agent-contact span:first-child{font-size:1.1rem;}
+.nmls{font-size:.78rem;color:rgba(255,255,255,0.4);margin-top:16px;}
+
+/* LEAD FORM */
+.form-section{background:linear-gradient(135deg,var(--navy) 0%,#1a3a7a 100%);color:var(--white);}
+.form-section .section-title{color:var(--white);}
+.form-section .section-sub{color:rgba(255,255,255,0.7);}
+.lead-form{background:var(--white);border-radius:16px;padding:40px;max-width:580px;margin:40px auto 0;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.form-group label{font-size:.82rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;}
+.form-group input,.form-group select,.form-group textarea{padding:13px 16px;border:1.5px solid #dde3f0;border-radius:8px;font-size:.95rem;color:var(--dark);transition:.2s;font-family:inherit;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.15);}
+.form-group textarea{resize:vertical;min-height:90px;}
+.submit-btn{width:100%;background:var(--navy);color:var(--white);font-weight:800;font-size:1.05rem;padding:16px;border:none;border-radius:8px;cursor:pointer;transition:.2s;margin-top:6px;}
+.submit-btn:hover{background:var(--gold);color:var(--navy);}
+.form-disclaimer{font-size:.75rem;color:#999;text-align:center;margin-top:12px;line-height:1.5;}
+#formSuccess{display:none;text-align:center;padding:20px;}
+#formSuccess h3{color:var(--navy);font-size:1.3rem;margin-bottom:8px;}
+#formSuccess p{color:var(--gray);}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padding:30px 5%;font-size:.8rem;line-height:1.8;}
+footer strong{color:rgba(255,255,255,0.8);}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .form-row{grid-template-columns:1fr;}
+  .hero-stats{gap:24px;}
+  .agent-inner{justify-content:center;text-align:center;}
+  .agent-contacts{align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ALL IN <span>CRE</span></div>
+  <a href="#contact" class="nav-cta">Get Funded →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Commercial Real Estate Lending</div>
+    <h1>Fund Your Next<br/><span>Commercial Deal</span><br/>Fast & Simple</h1>
+    <p>From SBA loans to bridge financing — we close commercial deals other lenders pass on. Get a quote in 24 hours.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Apply Now — It's Free</a>
+      <a href="#loans" class="btn-secondary">See Loan Types</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">$50M+</div><div class="stat-label">Loans Closed</div></div>
+      <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Loan Programs</div></div>
+      <div class="stat"><div class="stat-num">24hr</div><div class="stat-label">Quote Turnaround</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">All In</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOAN TYPES -->
+<section class="loans" id="loans">
+  <div class="section-header">
+    <div class="section-label">What We Offer</div>
+    <div class="section-title">Commercial Loan Programs</div>
+    <div class="section-sub">Every deal is different. We have the program to match — from small business to large-scale development.</div>
+  </div>
+  <div class="loans-grid">
+    <div class="loan-card">
+      <div class="loan-icon">🏛️</div>
+      <h3>SBA 7(a) Loan</h3>
+      <p>Up to $5M for owner-occupied commercial real estate, working capital, and business acquisitions.</p>
+      <span class="loan-tag tag-green">Up to $5M</span>
+    </div>
+    <div class="loan-card">
+      <div class="loan-icon">🏗️</div>
+      <h3>SBA 504 Loan</h3>
+      <p>Up to $20M fixed-rate financing for owner-occupied real estate and major equipment purchases.</p>
+      <span class="loan-tag tag-green">Up to $20M</span>
+    </div>
+    <div class="loan-card">
+      <div class="loan-icon">🏢</div>
+      <h3>Multifamily / Apartment</h3>
+      <p>Fannie Mae, Freddie Mac, and FHA/HUD financing for 5+ unit residential properties.</p>
+      <span class="loan-tag tag-blue">5+ Units</span>
+    </div>
+    <div class="loan-card">
+      <div class="loan-icon">⚡</div>
+      <h3>Bridge Loan</h3>
+      <p>Short-term financing (6–36 months) for value-add, transitional, or time-sensitive deals.</p>
+      <span class="loan-tag tag-orange">Fast Close</span>
+    </div>
+    <div class="loan-card">
+      <div class="loan-icon">🔨</div>
+      <h3>Construction Loan</h3>
+      <p>Ground-up construction financing for commercial, mixed-use, and multifamily developments.</p>
+      <span class="loan-tag tag-orange">New Build</span>
+    </div>
+    <div class="loan-card">
+      <div class="loan-icon">💵</div>
+      <h3>Hard Money</h3>
+      <p>Asset-based lending for fix & flip, distressed properties, or when speed matters most.</p>
+      <span class="loan-tag tag-orange">Fast Approval</span>
+    </div>
+    <div class="loan-card">
+      <div class="loan-icon">🏬</div>
+      <h3>Retail / Office / Industrial</h3>
+      <p>Conventional commercial mortgages for retail centers, office buildings, and warehouses.</p>
+      <span class="loan-tag tag-blue">All Property Types</span>
+    </div>
+    <div class="loan-card">
+      <div class="loan-icon">🏨</div>
+      <h3>Hospitality & Special Use</h3>
+      <p>Hotels, self-storage, gas stations, medical offices, and other special-use properties.</p>
+      <span class="loan-tag tag-blue">Specialty</span>
+    </div>
+    <div class="loan-card">
+      <div class="loan-icon">📊</div>
+      <h3>CMBS Loans</h3>
+      <p>Non-recourse securitized financing for stabilized commercial properties $2M and above.</p>
+      <span class="loan-tag tag-green">$2M+</span>
+    </div>
+    <div class="loan-card">
+      <div class="loan-icon">🔑</div>
+      <h3>NNN / Net Lease</h3>
+      <p>Financing for triple net lease properties — single-tenant retail, fast food, pharmacies.</p>
+      <span class="loan-tag tag-green">Low Management</span>
+    </div>
+    <div class="loan-card">
+      <div class="loan-icon">🌾</div>
+      <h3>USDA B&I Loan</h3>
+      <p>Government-backed financing for businesses and real estate in rural communities.</p>
+      <span class="loan-tag tag-green">Government-Backed</span>
+    </div>
+    <div class="loan-card">
+      <div class="loan-icon">🏘️</div>
+      <h3>Mobile Home Parks</h3>
+      <p>Specialized financing for mobile home park acquisitions, refinances, and development.</p>
+      <span class="loan-tag tag-blue">Alternative Asset</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <div class="section-header" style="text-align:center;">
+    <div class="section-label">How It Works</div>
+    <div class="section-title">Close Your Deal in 4 Steps</div>
+    <div class="section-sub" style="margin:0 auto;">Simple, transparent, and fast. We guide you every step of the way.</div>
+  </div>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Submit Your Deal</h3>
+      <p>Fill out our quick form with basic property and loan details. Takes less than 3 minutes.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Get Your Quote</h3>
+      <p>Sandra reviews your deal and delivers loan options within 24 hours — no fluff, no runaround.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Submit to Lender</h3>
+      <p>We package your file and submit to the best-fit lender from our network of 50+ commercial lenders.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Close & Fund</h3>
+      <p>We manage the process from approval to close — you stay focused on your deal, we handle the rest.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AGENT -->
+<section class="agent" id="about">
+  <div class="agent-inner">
+    <div class="agent-photo">👩🏻‍💼</div>
+    <div class="agent-info">
+      <div class="section-label">Your Lending Partner</div>
+      <h2>Sandra Navarro</h2>
+      <div class="agent-title">Commercial Mortgage Advisor | All In Lending</div>
+      <p>Sandra specializes in structuring complex commercial deals that other lenders won't touch. With deep lender relationships and a no-nonsense approach, she gets deals done — fast.</p>
+      <div class="agent-contacts">
+        <div class="agent-contact"><span>📞</span><span>(323) 596-8538</span></div>
+        <div class="agent-contact"><span>📧</span><span>sandra@loanbossco.com</span></div>
+      </div>
+      <div class="nmls">NMLS# 1829956 | All In Lending | Licensed in California</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section class="form-section" id="contact">
+  <div style="text-align:center;max-width:600px;margin:0 auto;">
+    <div class="section-label">Get Started</div>
+    <div class="section-title">Get Your Free Quote</div>
+    <div class="section-sub" style="margin:0 auto;">Tell us about your deal and Sandra will reach out within 24 hours with your options.</div>
+  </div>
+  <div class="lead-form">
+    <div id="formSuccess">
+      <div style="font-size:3rem;margin-bottom:12px;">✅</div>
+      <h3>Got it! Sandra will be in touch within 24 hours.</h3>
+      <p>Check your phone — she'll call or text you directly.</p>
+    </div>
+    <form id="leadForm" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="fname" placeholder="John" required/>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="lname" placeholder="Smith" required/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" id="phone" placeholder="(619) 555-0100" required/>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" placeholder="john@email.com" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Loan Type</label>
+        <select id="loanType" required>
+          <option value="">Select loan type...</option>
+          <option>SBA 7(a)</option>
+          <option>SBA 504</option>
+          <option>Multifamily / Apartment</option>
+          <option>Bridge Loan</option>
+          <option>Construction Loan</option>
+          <option>Hard Money</option>
+          <option>Retail / Office / Industrial</option>
+          <option>Hospitality / Special Use</option>
+          <option>CMBS</option>
+          <option>NNN / Net Lease</option>
+          <option>USDA B&I</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Loan Amount</label>
+          <input type="text" id="loanAmount" placeholder="$1,000,000"/>
+        </div>
+        <div class="form-group">
+          <label>Property State</label>
+          <input type="text" id="state" placeholder="California"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Tell us about your deal (optional)</label>
+        <textarea id="notes" placeholder="Property type, current status, timeline, anything else..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit My Deal →</button>
+      <div class="form-disclaimer">By submitting, you agree to be contacted by Sandra Navarro regarding your commercial loan inquiry. We respect your privacy and never sell your information.</div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>All In CRE</strong> — Powered by All In Lending<br/>
+  Sandra Navarro | NMLS# 1829956 | (323) 596-8538 | sandra@loanbossco.com<br/>
+  <br/>
+  This is not a commitment to lend. All loans subject to credit approval. Equal Housing Lender.
+</footer>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  const data = {
+    name: document.getElementById('fname').value + ' ' + document.getElementById('lname').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    loanType: document.getElementById('loanType').value,
+    loanAmount: document.getElementById('loanAmount').value,
+    state: document.getElementById('state').value,
+    notes: document.getElementById('notes').value,
+    source: 'allincre.co',
+    timestamp: new Date().toISOString()
+  };
+
+  // Send to backend
+  fetch('/api/lead', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(data)
+  }).catch(()=>{});
+
+  document.getElementById('leadForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "allincre",
+  "version": "1.0.0",
+  "description": "All In CRE — Commercial Real Estate Lead Gen Site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  }
+}
