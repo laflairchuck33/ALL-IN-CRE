@@ -104,8 +104,9 @@ section{padding:80px 5%;}
 .form-group input,.form-group select,.form-group textarea{padding:13px 16px;border:1.5px solid #dde3f0;border-radius:8px;font-size:.95rem;color:var(--dark);transition:.2s;font-family:inherit;}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.15);}
 .form-group textarea{resize:vertical;min-height:90px;}
-.submit-btn{width:100%;background:#111111;color:#ffffff;font-weight:800;font-size:1.05rem;padding:16px;border:none;border-radius:8px;cursor:pointer;transition:.2s;margin-top:6px;}
-.submit-btn:hover{background:#333333;color:#ffffff;}
+.submit-btn{width:100%;background:#cccccc;color:#888888;font-weight:800;font-size:1.05rem;padding:16px;border:none;border-radius:8px;cursor:not-allowed;transition:.2s;margin-top:6px;}
+.submit-btn.ready{background:#111111;color:#ffffff;cursor:pointer;}
+.submit-btn.ready:hover{background:#333333;}
 .form-disclaimer{font-size:.75rem;color:#999;text-align:center;margin-top:12px;line-height:1.5;}
 #formSuccess{display:none;text-align:center;padding:20px;}
 #formSuccess h3{color:var(--navy);font-size:1.3rem;margin-bottom:8px;}
@@ -625,7 +626,7 @@ footer strong{color:rgba(255,255,255,0.8);}
         <label>Tell us about your deal (optional)</label>
         <textarea id="notes" placeholder="Property type, current status, timeline, anything else..."></textarea>
       </div>
-      <button type="submit" class="submit-btn">Submit My Deal →</button>
+      <button type="submit" id="leadSubmitBtn" class="submit-btn" disabled>Submit My Deal →</button>
       <div class="form-disclaimer">By submitting, you agree to be contacted by Sandra Navarro regarding your commercial loan inquiry. We respect your privacy and never sell your information.</div>
     </form>
   </div>
@@ -663,6 +664,23 @@ function submitScenario(e) {
   document.getElementById('scenarioFields').style.display = 'none';
   document.getElementById('scenarioSuccess').style.display = 'block';
 }
+
+// Required fields validation for lead form
+function checkLeadForm() {
+  const btn = document.getElementById('leadSubmitBtn');
+  const fields = ['fname','lname','phone','email','loanType'];
+  const allFilled = fields.every(id => document.getElementById(id).value.trim() !== '');
+  btn.classList.toggle('ready', allFilled);
+  btn.disabled = !allFilled;
+}
+document.addEventListener('DOMContentLoaded', function() {
+  ['fname','lname','phone','email','loanType'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', checkLeadForm);
+    if (el) el.addEventListener('change', checkLeadForm);
+  });
+  checkLeadForm();
+});
 
 function submitForm(e) {
   e.preventDefault();
