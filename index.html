@@ -145,6 +145,118 @@ footer strong{color:rgba(255,255,255,0.8);}
   </div>
 </section>
 
+<!-- SCENARIO SECTION -->
+<section style="background:#fff;padding:80px 5%;">
+  <div style="text-align:center;max-width:700px;margin:0 auto 50px;">
+    <div class="section-label">Submit Your Deal</div>
+    <div class="section-title" style="font-size:clamp(2rem,4vw,3rem);color:var(--navy);">Send Me Your Commercial Scenario</div>
+    <p style="font-size:1.05rem;color:var(--gray);margin-top:12px;line-height:1.7;">Every deal is unique. Fill out the form below with your scenario and Sandra will personally review it and get back to you within 24 hours with your options.</p>
+  </div>
+
+  <div style="max-width:720px;margin:0 auto;background:var(--navy);border-radius:20px;padding:48px 44px;box-shadow:0 24px 80px rgba(15,31,69,.25);">
+    <form id="scenarioForm" onsubmit="submitScenario(event)">
+      <div id="scenarioSuccess" style="display:none;text-align:center;padding:30px 0;">
+        <div style="font-size:3.5rem;margin-bottom:16px;">✅</div>
+        <h3 style="color:var(--gold);font-size:1.6rem;margin-bottom:10px;">Scenario Received!</h3>
+        <p style="color:rgba(255,255,255,0.75);">Sandra will review your deal and reach out within 24 hours.</p>
+      </div>
+      <div id="scenarioFields">
+        <!-- Row 1 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">First Name *</label>
+            <input type="text" id="s_fname" placeholder="John" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Last Name *</label>
+            <input type="text" id="s_lname" placeholder="Smith" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+          </div>
+        </div>
+        <!-- Row 2 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Phone *</label>
+            <input type="tel" id="s_phone" placeholder="(619) 555-0100" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Email *</label>
+            <input type="email" id="s_email" placeholder="john@email.com" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+          </div>
+        </div>
+        <!-- Row 3 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Loan Type *</label>
+            <select id="s_loanType" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(30,50,100,.9);color:#fff;font-size:.95rem;font-family:inherit;">
+              <option value="">Select...</option>
+              <optgroup label="Traditional"><option>Conventional Commercial Mortgage</option><option>Commercial Construction Loan</option><option>Mini-Perm Loan</option></optgroup>
+              <optgroup label="Government-Backed"><option>SBA 7(a)</option><option>SBA 504</option><option>USDA B&I Loan</option></optgroup>
+              <optgroup label="Agency / Multifamily"><option>Fannie Mae Multifamily</option><option>Freddie Mac Multifamily</option><option>FHA/HUD 223(f)</option><option>FHA/HUD 221(d)(4)</option></optgroup>
+              <optgroup label="Bridge & Short-Term"><option>Bridge Loan</option><option>Hard Money Loan</option><option>Fix & Flip Commercial</option></optgroup>
+              <optgroup label="Specialty"><option>CMBS Loan</option><option>Mezzanine Loan</option><option>Preferred Equity</option><option>Blanket Loan</option><option>Portfolio Loan</option></optgroup>
+              <optgroup label="By Property Type"><option>Multifamily (5+ Units)</option><option>Retail / Strip Mall</option><option>Office</option><option>Industrial / Warehouse</option><option>Mixed-Use</option><option>Hospitality / Hotel</option><option>Self-Storage</option><option>Mobile Home Parks</option><option>Gas Station / Car Wash</option><option>Medical / Healthcare</option><option>NNN / Triple Net Lease</option></optgroup>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Loan Amount *</label>
+            <input type="text" id="s_loanAmount" placeholder="e.g. $2,500,000" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+          </div>
+        </div>
+        <!-- Row 4 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Property Type</label>
+            <input type="text" id="s_propType" placeholder="e.g. Apartment, Retail, Office" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Property State</label>
+            <input type="text" id="s_state" placeholder="e.g. California" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+          </div>
+        </div>
+        <!-- Row 5 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Purchase Price / Value</label>
+            <input type="text" id="s_price" placeholder="e.g. $3,000,000" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Credit Score (approx)</label>
+            <select id="s_credit" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(30,50,100,.9);color:#fff;font-size:.95rem;font-family:inherit;">
+              <option value="">Select range...</option>
+              <option>760+</option>
+              <option>720-759</option>
+              <option>680-719</option>
+              <option>640-679</option>
+              <option>600-639</option>
+              <option>Below 600</option>
+              <option>Not Sure</option>
+            </select>
+          </div>
+        </div>
+        <!-- Row 6 -->
+        <div style="margin-bottom:18px;">
+          <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Timeline to Close</label>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="ASAP (30 days or less)"/> ASAP (30 days or less)</label>
+            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="30–60 days"/> 30–60 days</label>
+            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="60–90 days"/> 60–90 days</label>
+            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="90+ days"/> 90+ days</label>
+          </div>
+        </div>
+        <!-- Row 7 -->
+        <div style="margin-bottom:24px;">
+          <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Tell Me About Your Scenario *</label>
+          <textarea id="s_notes" rows="5" placeholder="Describe your deal — property address, current occupancy, income, any challenges, what you need..." required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;resize:vertical;"></textarea>
+        </div>
+        <button type="submit" style="width:100%;background:var(--gold);color:var(--navy);font-weight:900;font-size:1.1rem;padding:18px;border:none;border-radius:10px;cursor:pointer;transition:.2s;letter-spacing:.5px;">🚀 Submit My Scenario →</button>
+        <p style="color:rgba(255,255,255,.35);font-size:.75rem;text-align:center;margin-top:12px;">Your information is kept 100% confidential. Sandra will personally review every submission.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+
 <!-- LOAN TYPES -->
 <section class="loans" id="loans">
   <div class="section-header">
@@ -406,116 +518,6 @@ footer strong{color:rgba(255,255,255,0.8);}
   </div>
 </section>
 
-<!-- SCENARIO SECTION -->
-<section style="background:#fff;padding:80px 5%;">
-  <div style="text-align:center;max-width:700px;margin:0 auto 50px;">
-    <div class="section-label">Submit Your Deal</div>
-    <div class="section-title" style="font-size:clamp(2rem,4vw,3rem);color:var(--navy);">Send Me Your Commercial Scenario</div>
-    <p style="font-size:1.05rem;color:var(--gray);margin-top:12px;line-height:1.7;">Every deal is unique. Fill out the form below with your scenario and Sandra will personally review it and get back to you within 24 hours with your options.</p>
-  </div>
-
-  <div style="max-width:720px;margin:0 auto;background:var(--navy);border-radius:20px;padding:48px 44px;box-shadow:0 24px 80px rgba(15,31,69,.25);">
-    <form id="scenarioForm" onsubmit="submitScenario(event)">
-      <div id="scenarioSuccess" style="display:none;text-align:center;padding:30px 0;">
-        <div style="font-size:3.5rem;margin-bottom:16px;">✅</div>
-        <h3 style="color:var(--gold);font-size:1.6rem;margin-bottom:10px;">Scenario Received!</h3>
-        <p style="color:rgba(255,255,255,0.75);">Sandra will review your deal and reach out within 24 hours.</p>
-      </div>
-      <div id="scenarioFields">
-        <!-- Row 1 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
-          <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">First Name *</label>
-            <input type="text" id="s_fname" placeholder="John" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
-          </div>
-          <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Last Name *</label>
-            <input type="text" id="s_lname" placeholder="Smith" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
-          </div>
-        </div>
-        <!-- Row 2 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
-          <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Phone *</label>
-            <input type="tel" id="s_phone" placeholder="(619) 555-0100" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
-          </div>
-          <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Email *</label>
-            <input type="email" id="s_email" placeholder="john@email.com" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
-          </div>
-        </div>
-        <!-- Row 3 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
-          <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Loan Type *</label>
-            <select id="s_loanType" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(30,50,100,.9);color:#fff;font-size:.95rem;font-family:inherit;">
-              <option value="">Select...</option>
-              <optgroup label="Traditional"><option>Conventional Commercial Mortgage</option><option>Commercial Construction Loan</option><option>Mini-Perm Loan</option></optgroup>
-              <optgroup label="Government-Backed"><option>SBA 7(a)</option><option>SBA 504</option><option>USDA B&I Loan</option></optgroup>
-              <optgroup label="Agency / Multifamily"><option>Fannie Mae Multifamily</option><option>Freddie Mac Multifamily</option><option>FHA/HUD 223(f)</option><option>FHA/HUD 221(d)(4)</option></optgroup>
-              <optgroup label="Bridge & Short-Term"><option>Bridge Loan</option><option>Hard Money Loan</option><option>Fix & Flip Commercial</option></optgroup>
-              <optgroup label="Specialty"><option>CMBS Loan</option><option>Mezzanine Loan</option><option>Preferred Equity</option><option>Blanket Loan</option><option>Portfolio Loan</option></optgroup>
-              <optgroup label="By Property Type"><option>Multifamily (5+ Units)</option><option>Retail / Strip Mall</option><option>Office</option><option>Industrial / Warehouse</option><option>Mixed-Use</option><option>Hospitality / Hotel</option><option>Self-Storage</option><option>Mobile Home Parks</option><option>Gas Station / Car Wash</option><option>Medical / Healthcare</option><option>NNN / Triple Net Lease</option></optgroup>
-              <option>Other / Not Sure</option>
-            </select>
-          </div>
-          <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Loan Amount *</label>
-            <input type="text" id="s_loanAmount" placeholder="e.g. $2,500,000" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
-          </div>
-        </div>
-        <!-- Row 4 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
-          <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Property Type</label>
-            <input type="text" id="s_propType" placeholder="e.g. Apartment, Retail, Office" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
-          </div>
-          <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Property State</label>
-            <input type="text" id="s_state" placeholder="e.g. California" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
-          </div>
-        </div>
-        <!-- Row 5 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
-          <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Purchase Price / Value</label>
-            <input type="text" id="s_price" placeholder="e.g. $3,000,000" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
-          </div>
-          <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Credit Score (approx)</label>
-            <select id="s_credit" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(30,50,100,.9);color:#fff;font-size:.95rem;font-family:inherit;">
-              <option value="">Select range...</option>
-              <option>760+</option>
-              <option>720-759</option>
-              <option>680-719</option>
-              <option>640-679</option>
-              <option>600-639</option>
-              <option>Below 600</option>
-              <option>Not Sure</option>
-            </select>
-          </div>
-        </div>
-        <!-- Row 6 -->
-        <div style="margin-bottom:18px;">
-          <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Timeline to Close</label>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="ASAP (30 days or less)"/> ASAP (30 days or less)</label>
-            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="30–60 days"/> 30–60 days</label>
-            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="60–90 days"/> 60–90 days</label>
-            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="90+ days"/> 90+ days</label>
-          </div>
-        </div>
-        <!-- Row 7 -->
-        <div style="margin-bottom:24px;">
-          <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Tell Me About Your Scenario *</label>
-          <textarea id="s_notes" rows="5" placeholder="Describe your deal — property address, current occupancy, income, any challenges, what you need..." required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;resize:vertical;"></textarea>
-        </div>
-        <button type="submit" style="width:100%;background:var(--gold);color:var(--navy);font-weight:900;font-size:1.1rem;padding:18px;border:none;border-radius:10px;cursor:pointer;transition:.2s;letter-spacing:.5px;">🚀 Submit My Scenario →</button>
-        <p style="color:rgba(255,255,255,.35);font-size:.75rem;text-align:center;margin-top:12px;">Your information is kept 100% confidential. Sandra will personally review every submission.</p>
-      </div>
-    </form>
-  </div>
-</section>
 
 <!-- LEAD FORM -->
 <section class="form-section" id="contact">
