@@ -10,7 +10,7 @@ const WEBHOOK_URL = process.env.OPENCLAW_WEBHOOK || '';
 async function sendTelegram(text) {
   try {
     const { default: fetch } = await import('node-fetch');
-    const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
+    const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8446603163:AAGfzkQ7eT8ZiBnw6Bq6E2n4vz5AHDF9OjI';
     if (!BOT_TOKEN) return;
     await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: 'POST',
