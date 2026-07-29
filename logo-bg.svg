@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' width='400' height='120'>
+  <defs>
+    <linearGradient id='chrome' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#ffffff'/>
+      <stop offset='30%' stop-color='#cccccc'/>
+      <stop offset='50%' stop-color='#888888'/>
+      <stop offset='70%' stop-color='#cccccc'/>
+      <stop offset='100%' stop-color='#444444'/>
+    </linearGradient>
+  </defs>
+  <!-- ALL IN - metallic -->
+  <text x='200' y='36' font-family='Arial Black,Impact,sans-serif' font-size='38' font-weight='900' fill='url(#chrome)' text-anchor='middle' letter-spacing='6'>ALL IN</text>
+  <!-- Blue bar -->
+  <rect x='0' y='44' width='400' height='34' fill='#2255cc'/>
+  <text x='200' y='67' font-family='Arial,sans-serif' font-size='15' font-weight='700' fill='white' text-anchor='middle' letter-spacing='8'>COMMERCIAL</text>
+  <!-- LENDING - metallic -->
+  <text x='200' y='110' font-family='Arial Black,Impact,sans-serif' font-size='28' font-weight='900' fill='url(#chrome)' text-anchor='middle' letter-spacing='12'>LENDING</text>
+</svg>
