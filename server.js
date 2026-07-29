@@ -20,6 +20,24 @@ async function sendTelegram(text) {
   } catch(e) { console.error('Telegram error:', e.message); }
 }
 
+// Send email via Formspree
+async function sendFormspree(d) {
+  try {
+    const { default: fetch } = await import('node-fetch');
+    const params = new URLSearchParams();
+    Object.entries(d).forEach(([k,v]) => params.append(k, v || ''));
+    params.append('_replyto', d.email || '');
+    params.append('_subject', `New CRE Scenario: ${d.name} — ${d.loanType} | ${d.loanAmount}`);
+    const res = await fetch('https://formspree.io/f/mkodydvp', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString()
+    });
+    const result = await res.json();
+    console.log('Formspree result:', JSON.stringify(result));
+  } catch(e) { console.error('Formspree error:', e.message); }
+}
+
 async function addToFUB(d) {
   try {
     const { default: fetch } = await import('node-fetch');
@@ -76,6 +94,7 @@ app.post('/api/lead', async (req, res) => {
 
   await sendTelegram(tgMsg);
   await addToFUB(d);
+  await sendFormspree(d);
 
   res.json({ ok: true });
 });
