@@ -271,7 +271,7 @@ footer strong{color:rgba(255,255,255,0.8);}
           <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Tell Me About Your Scenario *</label>
           <textarea id="s_notes" rows="5" placeholder="Describe your deal — property address, current occupancy, income, any challenges, what you need..." required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;resize:vertical;"></textarea>
         </div>
-        <button type="submit" style="width:100%;background:#ffffff;color:#111111;font-weight:900;font-size:1.1rem;padding:18px;border:none;border-radius:10px;cursor:pointer;transition:.2s;letter-spacing:.5px;">🚀 Submit My Scenario →</button>
+        <button type="submit" id="scenarioSubmitBtn" disabled style="width:100%;background:#555555;color:#999999;font-weight:900;font-size:1.1rem;padding:18px;border:none;border-radius:10px;cursor:not-allowed;transition:.3s;letter-spacing:.5px;">🚀 Submit My Scenario →</button>
         <p style="color:rgba(255,255,255,.35);font-size:.75rem;text-align:center;margin-top:12px;">Your information is kept 100% confidential. Sandra will personally review every submission.</p>
       </div>
     </form>
@@ -652,6 +652,35 @@ footer strong{color:rgba(255,255,255,0.8);}
 </footer>
 
 <script>
+function checkScenarioForm() {
+  const btn = document.getElementById('scenarioSubmitBtn');
+  const required = ['s_fname','s_lname','s_phone','s_email','s_loanType','s_loanAmount','s_notes'];
+  const timeline = document.querySelector('input[name="timeline"]:checked');
+  const allFilled = required.every(id => {
+    const el = document.getElementById(id);
+    return el && el.value.trim() !== '';
+  }) && timeline;
+  if (allFilled) {
+    btn.disabled = false;
+    btn.style.background = '#ffffff';
+    btn.style.color = '#111111';
+    btn.style.cursor = 'pointer';
+  } else {
+    btn.disabled = true;
+    btn.style.background = '#555555';
+    btn.style.color = '#999999';
+    btn.style.cursor = 'not-allowed';
+  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+  ['s_fname','s_lname','s_phone','s_email','s_loanType','s_loanAmount','s_notes'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.addEventListener('input', checkScenarioForm); el.addEventListener('change', checkScenarioForm); }
+  });
+  document.querySelectorAll('input[name="timeline"]').forEach(r => r.addEventListener('change', checkScenarioForm));
+  checkScenarioForm();
+});
+
 function submitScenario(e) {
   e.preventDefault();
   const timeline = document.querySelector('input[name="timeline"]:checked');
