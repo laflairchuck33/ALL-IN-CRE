@@ -100,3 +100,4 @@ app.post('/api/lead', async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('allincre server running on port ' + PORT));
+// redeployed Wed Jul 29 02:00:07 EDT 2026
