@@ -700,7 +700,12 @@ function submitScenario(e) {
     source: 'allincre.co',
     timestamp: new Date().toISOString()
   };
+  // Send to our server (Telegram alert)
   fetch('/api/lead', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) }).catch(()=>{});
+  // Send to Sandra via Formspree
+  const fd = new FormData();
+  Object.entries(data).forEach(([k,v]) => fd.append(k, v));
+  fetch('https://formspree.io/f/mkodydvp', { method:'POST', body:fd, headers:{Accept:'application/json'} }).catch(()=>{});
   document.getElementById('scenarioFields').style.display = 'none';
   document.getElementById('scenarioSuccess').style.display = 'block';
 }
