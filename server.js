@@ -30,16 +30,7 @@ async function addToFUB(d) {
       phones: d.phone ? [{ value: d.phone }] : [],
       stage: 'Lead',
       source: 'allincre.co',
-      description: [
-        `Loan Type: ${d.loanType || 'N/A'}`,
-        `Loan Amount: ${d.loanAmount || 'N/A'}`,
-        `Property Type: ${d.propType || 'N/A'}`,
-        `State: ${d.state || 'N/A'}`,
-        `Purchase Price: ${d.price || 'N/A'}`,
-        `Credit Score: ${d.credit || 'N/A'}`,
-        `Timeline: ${d.timeline || 'N/A'}`,
-        `Scenario: ${d.notes || 'N/A'}`
-      ].join('\n')
+      tags: [d.loanType || 'CRE Lead']
     };
     const res = await fetch('https://api.followupboss.com/v1/people', {
       method: 'POST',
@@ -51,6 +42,17 @@ async function addToFUB(d) {
     });
     const result = await res.json();
     console.log('FUB result:', JSON.stringify(result));
+    // Add note with scenario details
+    if (result.id) {
+      await fetch(`https://api.followupboss.com/v1/notes`, {
+        method: 'POST',
+        headers: { 'Authorization': '***' + FUB_AUTH, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          personId: result.id,
+          body: `CRE Scenario from allincre.co\nLoan Type: ${d.loanType || 'N/A'}\nAmount: ${d.loanAmount || 'N/A'}\nProperty: ${d.propType || 'N/A'}\nState: ${d.state || 'N/A'}\nPrice: ${d.price || 'N/A'}\nCredit: ${d.credit || 'N/A'}\nTimeline: ${d.timeline || 'N/A'}\nScenario: ${d.notes || 'N/A'}`
+        })
+      });
+    }
   } catch(e) { console.error('FUB error:', e.message); }
 }
 
