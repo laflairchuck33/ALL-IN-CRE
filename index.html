@@ -28,9 +28,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.9
 .nav-cta:hover{background:#e0e0e0;}
 
 /* HERO */
-.hero{min-height:100vh;background:linear-gradient(135deg,#111111 0%,#2a2a2a 60%,#000000 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 5% 60px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:url('/logo-bg.svg') center center no-repeat;background-size:70%;opacity:0.07;}
-.hero-inner{max-width:800px;position:relative;}
+.hero{min-height:100vh;background:#000000;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 5% 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.75) 100%);z-index:1;}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.6;}
+.hero-logo-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;pointer-events:none;}
+.hero-logo-bg img{width:85%;max-width:900px;opacity:0.08;filter:grayscale(100%) brightness(2);}
+.hero-inner{max-width:800px;position:relative;z-index:2;}
 .hero-badge{display:inline-block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.4);color:#ffffff;font-size:.8rem;font-weight:700;letter-spacing:2px;padding:6px 18px;border-radius:50px;margin-bottom:24px;text-transform:uppercase;}
 .hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:20px;}
 .hero h1 span{color:var(--gold);}
@@ -128,6 +131,13 @@ footer strong{color:rgba(255,255,255,0.8);}
 
 <!-- HERO -->
 <section class="hero">
+  <!-- City video background -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38aaa35f6&profile_id=164&oauth2_token_id=57447761" type="video/mp4"/>
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-city-at-night-11-large.mp4" type="video/mp4"/>
+  </video>
+  <!-- Large logo watermark -->
+  <div class="hero-logo-bg"><img src="/logo-bg.svg" alt=""/></div>
   <div class="hero-inner">
     <div style="margin-bottom:28px;"><img src="/logo.svg" alt="All In Commercial Lending" style="height:80px;width:auto;"/></div>
     <div class="hero-badge">Commercial Lending is Easier than You Think</div>
