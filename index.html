@@ -8,79 +8,79 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --navy:#0f1f45;
-  --navy2:#1a2e5a;
-  --gold:#c9a84c;
-  --gold2:#e8c86a;
+  --navy:#1a1a1a;
+  --navy2:#333333;
+  --gold:#1a1a1a;
+  --gold2:#444444;
   --white:#ffffff;
-  --light:#f4f6fb;
+  --light:#f2f2f2;
   --gray:#666;
-  --dark:#1a1a2e;
+  --dark:#111111;
 }
 body{font-family:'Segoe UI',Arial,sans-serif;color:var(--dark);background:#fff;}
 a{text-decoration:none;color:inherit;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,31,69,0.97);backdrop-filter:blur(8px);padding:0 5%;height:64px;display:flex;align-items:center;justify-content:space-between;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.97);backdrop-filter:blur(8px);padding:0 5%;height:64px;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{font-size:1.4rem;font-weight:800;color:var(--white);letter-spacing:1px;}
 .nav-logo span{color:var(--gold);}
-.nav-cta{background:var(--gold);color:var(--navy);font-weight:700;padding:10px 22px;border-radius:6px;font-size:.9rem;transition:.2s;}
-.nav-cta:hover{background:var(--gold2);}
+.nav-cta{background:#ffffff;color:#111111;font-weight:700;padding:10px 22px;border-radius:6px;font-size:.9rem;transition:.2s;}
+.nav-cta:hover{background:#e0e0e0;}
 
 /* HERO */
-.hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,#1a3a7a 60%,#0a1628 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 5% 60px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero{min-height:100vh;background:linear-gradient(135deg,#111111 0%,#2a2a2a 60%,#000000 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 5% 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
 .hero-inner{max-width:800px;position:relative;}
-.hero-badge{display:inline-block;background:rgba(201,168,76,0.15);border:1px solid var(--gold);color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:2px;padding:6px 18px;border-radius:50px;margin-bottom:24px;text-transform:uppercase;}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.4);color:#ffffff;font-size:.8rem;font-weight:700;letter-spacing:2px;padding:6px 18px;border-radius:50px;margin-bottom:24px;text-transform:uppercase;}
 .hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:20px;}
 .hero h1 span{color:var(--gold);}
 .hero p{font-size:1.15rem;color:rgba(255,255,255,0.8);max-width:580px;margin:0 auto 36px;line-height:1.7;}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-.btn-primary{background:var(--gold);color:var(--navy);font-weight:800;font-size:1rem;padding:16px 36px;border-radius:8px;transition:.2s;border:none;cursor:pointer;}
-.btn-primary:hover{background:var(--gold2);transform:translateY(-2px);}
+.btn-primary{background:#ffffff;color:#111111;font-weight:800;font-size:1rem;padding:16px 36px;border-radius:8px;transition:.2s;border:none;cursor:pointer;}
+.btn-primary:hover{background:#e0e0e0;transform:translateY(-2px);}
 .btn-secondary{background:transparent;color:var(--white);font-weight:700;font-size:1rem;padding:16px 36px;border-radius:8px;border:2px solid rgba(255,255,255,0.4);transition:.2s;cursor:pointer;}
 .btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
 .hero-stats{display:flex;gap:40px;justify-content:center;margin-top:52px;flex-wrap:wrap;}
 .stat{text-align:center;}
-.stat-num{font-size:2rem;font-weight:900;color:var(--gold);}
+.stat-num{font-size:2rem;font-weight:900;color:#ffffff;}
 .stat-label{font-size:.8rem;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
 
 /* SECTION */
 section{padding:80px 5%;}
-.section-label{font-size:.78rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.section-label{font-size:.78rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#888888;margin-bottom:10px;}
 .section-title{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:var(--navy);margin-bottom:14px;}
 .section-sub{font-size:1rem;color:var(--gray);max-width:560px;line-height:1.7;}
 .section-header{margin-bottom:50px;}
 
 /* LOAN TYPES */
-.loans{background:var(--light);}
+.loans{background:#f2f2f2;}
 .loans-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
 .loan-card{background:var(--white);border-radius:12px;padding:28px 24px;border:1px solid #e0e6f0;transition:.25s;cursor:pointer;}
-.loan-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,31,69,.12);border-color:var(--gold);}
+.loan-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.12);border-color:#111111;}
 .loan-icon{font-size:2rem;margin-bottom:14px;}
-.loan-card h3{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:8px;}
+.loan-card h3{font-size:1.05rem;font-weight:800;color:#111111;margin-bottom:8px;}
 .loan-card p{font-size:.88rem;color:var(--gray);line-height:1.6;}
 .loan-tag{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-top:12px;}
-.tag-green{background:#e8f5e9;color:#2e7d32;}
-.tag-blue{background:#e3f2fd;color:#1565c0;}
-.tag-orange{background:#fff3e0;color:#e65100;}
+.tag-green{background:#eeeeee;color:#333333;}
+.tag-blue{background:#e8e8e8;color:#111111;}
+.tag-orange{background:#e0e0e0;color:#222222;}
 
 /* PROCESS */
 .process-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;margin-top:48px;}
 .step{text-align:center;padding:32px 20px;}
-.step-num{width:52px;height:52px;background:var(--navy);color:var(--gold);font-size:1.3rem;font-weight:900;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
-.step h3{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:8px;}
+.step-num{width:52px;height:52px;background:#111111;color:#ffffff;font-size:1.3rem;font-weight:900;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+.step h3{font-size:1rem;font-weight:800;color:#111111;margin-bottom:8px;}
 .step p{font-size:.88rem;color:var(--gray);line-height:1.6;}
 
 /* AGENT SECTION */
-.agent{background:var(--navy);color:var(--white);}
+.agent{background:#111111;color:var(--white);}
 .agent-inner{display:flex;gap:60px;align-items:center;max-width:1000px;margin:0 auto;flex-wrap:wrap;}
-.agent-photo{width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,#2a4080,#1a2e5a);border:4px solid var(--gold);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:5rem;overflow:hidden;}
+.agent-photo{width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,#333,#111);border:4px solid #ffffff;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:5rem;overflow:hidden;}
 .agent-photo img{width:100%;height:100%;object-fit:cover;}
 .agent-info{flex:1;min-width:260px;}
 .agent-info .section-label{color:var(--gold);}
 .agent-info h2{font-size:2rem;font-weight:900;color:var(--white);margin-bottom:6px;}
-.agent-title{color:var(--gold);font-weight:700;font-size:1rem;margin-bottom:16px;}
+.agent-title{color:#aaaaaa;font-weight:700;font-size:1rem;margin-bottom:16px;}
 .agent-info p{color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:24px;}
 .agent-contacts{display:flex;flex-direction:column;gap:10px;}
 .agent-contact{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:.95rem;}
@@ -88,7 +88,7 @@ section{padding:80px 5%;}
 .nmls{font-size:.78rem;color:rgba(255,255,255,0.4);margin-top:16px;}
 
 /* LEAD FORM */
-.form-section{background:linear-gradient(135deg,var(--navy) 0%,#1a3a7a 100%);color:var(--white);}
+.form-section{background:linear-gradient(135deg,#111111 0%,#2a2a2a 100%);color:var(--white);}
 .form-section .section-title{color:var(--white);}
 .form-section .section-sub{color:rgba(255,255,255,0.7);}
 .lead-form{background:var(--white);border-radius:16px;padding:40px;max-width:580px;margin:40px auto 0;box-shadow:0 20px 60px rgba(0,0,0,.3);}
@@ -98,8 +98,8 @@ section{padding:80px 5%;}
 .form-group input,.form-group select,.form-group textarea{padding:13px 16px;border:1.5px solid #dde3f0;border-radius:8px;font-size:.95rem;color:var(--dark);transition:.2s;font-family:inherit;}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.15);}
 .form-group textarea{resize:vertical;min-height:90px;}
-.submit-btn{width:100%;background:var(--navy);color:var(--white);font-weight:800;font-size:1.05rem;padding:16px;border:none;border-radius:8px;cursor:pointer;transition:.2s;margin-top:6px;}
-.submit-btn:hover{background:var(--gold);color:var(--navy);}
+.submit-btn{width:100%;background:#111111;color:#ffffff;font-weight:800;font-size:1.05rem;padding:16px;border:none;border-radius:8px;cursor:pointer;transition:.2s;margin-top:6px;}
+.submit-btn:hover{background:#333333;color:#ffffff;}
 .form-disclaimer{font-size:.75rem;color:#999;text-align:center;margin-top:12px;line-height:1.5;}
 #formSuccess{display:none;text-align:center;padding:20px;}
 #formSuccess h3{color:var(--navy);font-size:1.3rem;margin-bottom:8px;}
@@ -146,18 +146,18 @@ footer strong{color:rgba(255,255,255,0.8);}
 </section>
 
 <!-- SCENARIO SECTION -->
-<section style="background:#fff;padding:80px 5%;">
+<section style="background:#f2f2f2;padding:80px 5%;">
   <div style="text-align:center;max-width:700px;margin:0 auto 50px;">
     <div class="section-label">Submit Your Deal</div>
     <div class="section-title" style="font-size:clamp(2rem,4vw,3rem);color:var(--navy);">Send Me Your Commercial Scenario</div>
     <p style="font-size:1.05rem;color:var(--gray);margin-top:12px;line-height:1.7;">Every deal is unique. Fill out the form below with your scenario and Sandra will personally review it and get back to you within 24 hours with your options.</p>
   </div>
 
-  <div style="max-width:720px;margin:0 auto;background:var(--navy);border-radius:20px;padding:48px 44px;box-shadow:0 24px 80px rgba(15,31,69,.25);">
+  <div style="max-width:720px;margin:0 auto;background:#111111;border-radius:20px;padding:48px 44px;box-shadow:0 24px 80px rgba(0,0,0,.2);">
     <form id="scenarioForm" onsubmit="submitScenario(event)">
       <div id="scenarioSuccess" style="display:none;text-align:center;padding:30px 0;">
         <div style="font-size:3.5rem;margin-bottom:16px;">✅</div>
-        <h3 style="color:var(--gold);font-size:1.6rem;margin-bottom:10px;">Scenario Received!</h3>
+        <h3 style="color:#ffffff;font-size:1.6rem;margin-bottom:10px;">Scenario Received!</h3>
         <p style="color:rgba(255,255,255,0.75);">Sandra will review your deal and reach out within 24 hours.</p>
       </div>
       <div id="scenarioFields">
@@ -249,7 +249,7 @@ footer strong{color:rgba(255,255,255,0.8);}
           <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Tell Me About Your Scenario *</label>
           <textarea id="s_notes" rows="5" placeholder="Describe your deal — property address, current occupancy, income, any challenges, what you need..." required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;resize:vertical;"></textarea>
         </div>
-        <button type="submit" style="width:100%;background:var(--gold);color:var(--navy);font-weight:900;font-size:1.1rem;padding:18px;border:none;border-radius:10px;cursor:pointer;transition:.2s;letter-spacing:.5px;">🚀 Submit My Scenario →</button>
+        <button type="submit" style="width:100%;background:#ffffff;color:#111111;font-weight:900;font-size:1.1rem;padding:18px;border:none;border-radius:10px;cursor:pointer;transition:.2s;letter-spacing:.5px;">🚀 Submit My Scenario →</button>
         <p style="color:rgba(255,255,255,.35);font-size:.75rem;text-align:center;margin-top:12px;">Your information is kept 100% confidential. Sandra will personally review every submission.</p>
       </div>
     </form>
