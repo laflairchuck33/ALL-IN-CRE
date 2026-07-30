@@ -38,8 +38,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.9
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.45) 100%);z-index:1;}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
 @keyframes zoomBg{0%{transform:scale(1);}100%{transform:scale(1.12);}}
-.hero-logo-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;pointer-events:none;}
-.hero-logo-bg img{width:85%;max-width:900px;opacity:0.08;filter:grayscale(100%) brightness(2);}
 .hero-inner{max-width:800px;position:relative;z-index:2;}
 .hero-badge{display:inline-block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.4);color:#ffffff;font-size:.8rem;font-weight:700;letter-spacing:2px;padding:6px 18px;border-radius:50px;margin-bottom:24px;text-transform:uppercase;}
 .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6rem);color:#ffffff;line-height:1.05;margin-bottom:20px;letter-spacing:2px;text-shadow:0 2px 20px rgba(0,0,0,0.5);}
@@ -67,7 +65,6 @@ section{padding:80px 5%;}
 .loans-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
 .loan-card{background:var(--white);border-radius:12px;padding:28px 24px;border:2px solid #111111;transition:.25s;cursor:pointer;}
 .loan-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.12);border-color:#111111;}
-.loan-icon{font-size:2rem;margin-bottom:14px;}
 .loan-card h3{font-size:1.05rem;font-weight:800;color:#111111;margin-bottom:8px;}
 .loan-card p{font-size:.88rem;color:var(--gray);line-height:1.6;}
 .loan-tag{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-top:12px;}
@@ -141,25 +138,23 @@ footer strong{color:rgba(255,255,255,0.8);}
     <a href="#about">About</a>
     <a href="#contact">Refer a Deal</a>
   </div>
-  <a href="#scenario" class="nav-cta">Get Funded →</a>
+  <a href="#scenario" class="nav-cta">Get Funded</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <!-- LA Cityscape background -->
   <div class="hero-video" style="background:url('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=1920&q=85') center center/cover no-repeat;animation:zoomBg 20s ease-in-out infinite alternate;"></div>
-
   <div class="hero-inner">
     <div style="margin-bottom:28px;"><img src="/logo.svg" alt="All In Commercial Lending" style="height:80px;width:auto;"/></div>
     <div class="hero-badge">Commercial Lending is Easier than You Think</div>
-    <h1>Fund Your Next<br/>Commercial Deal<br/>Fast & Simple</h1>
-    <p>From SBA loans to bridge financing — we close commercial deals other lenders pass on. Get a quote in 24 hours.</p>
+    <h1>Fund Your Next<br/>Commercial Deal<br/>Fast &amp; Simple</h1>
+    <p>From SBA loans to private bridge funding — we close commercial deals other lenders pass on. Get a quote in 24 hours.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Apply Now — It's Free</a>
       <a href="#loans" class="btn-secondary">See Loan Types</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">$50M+</div><div class="stat-label">Loans Closed</div></div>
+      <div class="stat"><div class="stat-num">$50MM+</div><div class="stat-label">Loans Closed</div></div>
       <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Loan Programs</div></div>
       <div class="stat"><div class="stat-num">24hr</div><div class="stat-label">Quote Turnaround</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">All In</div></div>
@@ -178,7 +173,6 @@ footer strong{color:rgba(255,255,255,0.8);}
   <div style="max-width:720px;margin:0 auto;background:#111111;border-radius:20px;padding:48px 44px;box-shadow:0 24px 80px rgba(0,0,0,.2);">
     <form id="scenarioForm" onsubmit="submitScenario(event)">
       <div id="scenarioSuccess" style="display:none;text-align:center;padding:30px 0;">
-        <div style="font-size:3.5rem;margin-bottom:16px;">✅</div>
         <h3 style="color:#ffffff;font-size:1.6rem;margin-bottom:10px;">Scenario Received!</h3>
         <p style="color:rgba(255,255,255,0.75);">Sandra will review your deal and reach out within 24 hours.</p>
       </div>
@@ -186,64 +180,111 @@ footer strong{color:rgba(255,255,255,0.8);}
         <!-- Row 1 -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
           <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">First Name *</label>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">First Name *</label>
             <input type="text" id="s_fname" placeholder="John" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
           </div>
           <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Last Name *</label>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Last Name *</label>
             <input type="text" id="s_lname" placeholder="Smith" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
           </div>
         </div>
         <!-- Row 2 -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
           <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Phone *</label>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Phone *</label>
             <input type="tel" id="s_phone" placeholder="(619) 555-0100" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
           </div>
           <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Email *</label>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Email *</label>
             <input type="email" id="s_email" placeholder="john@email.com" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
           </div>
         </div>
-        <!-- Row 3 -->
+        <!-- Row 3 — Need / Purpose -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
           <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Loan Type *</label>
-            <select id="s_loanType" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(30,50,100,.9);color:#fff;font-size:.95rem;font-family:inherit;">
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Need *</label>
+            <select id="s_need" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(30,50,100,.9);color:#fff;font-size:.95rem;font-family:inherit;">
               <option value="">Select...</option>
-              <optgroup label="Traditional"><option>Conventional Commercial Mortgage</option><option>Mini-Perm Loan</option></optgroup>
-              <optgroup label="Government-Backed"><option>SBA 7(a)</option><option>SBA 504</option><option>USDA B&I Loan</option></optgroup>
-              <optgroup label="Agency / Multifamily"><option>Fannie Mae Multifamily</option><option>Freddie Mac Multifamily</option></optgroup>
-              
-              
-              <optgroup label="By Property Type"><option>Retail / Strip Mall</option><option>Office</option><option>Industrial / Warehouse</option><option>Mixed-Use</option><option>Hospitality / Hotel</option><option>Mobile Home Parks</option><option>Gas Station / Car Wash</option><option>Medical / Healthcare</option></optgroup>
-              <option>Other / Not Sure</option>
+              <option>Need Liquidity</option>
+              <option>Purchase</option>
+              <option>Refinance</option>
             </select>
           </div>
           <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Loan Amount *</label>
-            <input type="text" id="s_loanAmount" placeholder="e.g. $2,500,000" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Occupancy *</label>
+            <select id="s_occupancy" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(30,50,100,.9);color:#fff;font-size:.95rem;font-family:inherit;">
+              <option value="">Select...</option>
+              <option>Owner User</option>
+              <option>Investment</option>
+            </select>
           </div>
         </div>
         <!-- Row 4 -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
           <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Property Type</label>
-            <input type="text" id="s_propType" placeholder="e.g. Apartment, Retail, Office" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Loan Type *</label>
+            <select id="s_loanType" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(30,50,100,.9);color:#fff;font-size:.95rem;font-family:inherit;">
+              <option value="">Select...</option>
+              <optgroup label="Traditional">
+                <option>Conventional Commercial Mortgage</option>
+                <option>Mini-Perm Loan</option>
+              </optgroup>
+              <optgroup label="Construction &amp; Development">
+                <option>Builder / Construction Financing</option>
+              </optgroup>
+              <optgroup label="Government-Backed">
+                <option>SBA 7(a) — Up to $5MM</option>
+                <option>SBA 504 — Up to $20MM+</option>
+              </optgroup>
+              <optgroup label="Bridge &amp; Special">
+                <option>Bridge Funding</option>
+                <option>Asset Based Lending</option>
+                <option>Equity Based Lending</option>
+              </optgroup>
+              <optgroup label="Agency / Multifamily">
+                <option>Fannie Mae Multifamily</option>
+                <option>Bridge &amp; Agency Multifamily</option>
+              </optgroup>
+              <optgroup label="By Property Type">
+                <option>Retail / Strip Mall</option>
+                <option>Office</option>
+                <option>Industrial / Warehouse</option>
+                <option>Mixed-Use</option>
+                <option>Hospitality / Hotel</option>
+                <option>Mobile Home Parks</option>
+                <option>Gas Station / Car Wash</option>
+                <option>Medical / Healthcare</option>
+                <option>Auto Service</option>
+                <option>Restaurant</option>
+                <option>Assisted Living Facility</option>
+              </optgroup>
+              <option>Other / Not Sure</option>
+            </select>
           </div>
           <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Property State</label>
-            <input type="text" id="s_state" placeholder="e.g. California" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Loan Amount *</label>
+            <input type="text" id="s_loanAmount" placeholder="e.g. $2,500,000" required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
           </div>
         </div>
         <!-- Row 5 -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
           <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Purchase Price / Value</label>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Property Type</label>
+            <input type="text" id="s_propType" placeholder="e.g. Apartment, Retail, Office" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Property State</label>
+            <input type="text" id="s_state" placeholder="e.g. California" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
+          </div>
+        </div>
+        <!-- Row 6 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;">
+          <div>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Purchase Price / Value</label>
             <input type="text" id="s_price" placeholder="e.g. $3,000,000" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;"/>
           </div>
           <div>
-            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Credit Score (approx)</label>
+            <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Credit Score (approx)</label>
             <select id="s_credit" style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(30,50,100,.9);color:#fff;font-size:.95rem;font-family:inherit;">
               <option value="">Select range...</option>
               <option>760+</option>
@@ -256,22 +297,22 @@ footer strong{color:rgba(255,255,255,0.8);}
             </select>
           </div>
         </div>
-        <!-- Row 6 -->
+        <!-- Row 7 -->
         <div style="margin-bottom:18px;">
-          <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Timeline to Close</label>
+          <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Timeline to Close</label>
           <div style="display:flex;gap:12px;flex-wrap:wrap;">
             <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="ASAP (30 days or less)"/> ASAP (30 days or less)</label>
-            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="30–60 days"/> 30–60 days</label>
-            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="60–90 days"/> 60–90 days</label>
+            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="30-60 days"/> 30-60 days</label>
+            <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="60-90 days"/> 60-90 days</label>
             <label style="color:rgba(255,255,255,.8);font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="timeline" value="90+ days"/> 90+ days</label>
           </div>
         </div>
-        <!-- Row 7 -->
+        <!-- Row 8 -->
         <div style="margin-bottom:24px;">
-          <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Tell Me About Your Scenario *</label>
+          <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">Tell Me About Your Scenario *</label>
           <textarea id="s_notes" rows="5" placeholder="Describe your deal — property address, current occupancy, income, any challenges, what you need..." required style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit;resize:vertical;"></textarea>
         </div>
-        <button type="submit" id="scenarioSubmitBtn" disabled style="width:100%;background:#555555;color:#999999;font-weight:900;font-size:1.1rem;padding:18px;border:none;border-radius:10px;cursor:not-allowed;transition:.3s;letter-spacing:.5px;">🚀 Submit My Scenario →</button>
+        <button type="submit" id="scenarioSubmitBtn" disabled style="width:100%;background:#555555;color:#999999;font-weight:900;font-size:1.1rem;padding:18px;border:none;border-radius:10px;cursor:not-allowed;transition:.3s;letter-spacing:.5px;">Submit My Scenario</button>
         <p style="color:rgba(255,255,255,.35);font-size:.75rem;text-align:center;margin-top:12px;">Your information is kept 100% confidential. Sandra will personally review every submission.</p>
       </div>
     </form>
@@ -284,123 +325,152 @@ footer strong{color:rgba(255,255,255,0.8);}
   <div class="section-header">
     <div class="section-label">What We Offer</div>
     <div class="section-title">Commercial Loan Programs</div>
-    <div class="section-sub">Every deal is different. We have the program to match — from small business to large-scale development.</div>
+    <div class="section-sub">From real estate financing to business acquisitions to large-scale development — we have the program to match.</div>
   </div>
+
   <!-- TRADITIONAL -->
-  <div style="margin-bottom:10px;"><span style="font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.5;">🏦 Traditional / Bank Loans</span></div>
+  <div style="margin-bottom:10px;"><span style="font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.5;">Traditional / Bank Loans</span></div>
   <div class="loans-grid" style="margin-bottom:40px;">
     <div class="loan-card">
-      <div class="loan-icon">🏦</div>
       <h3>Conventional Commercial Mortgage</h3>
-      <p>Standard bank loan with 5–30 year terms and 65–80% LTV for stabilized commercial properties.</p>
-      <span class="loan-tag tag-blue">65–80% LTV</span>
+      <p>Standard bank loan with 5-30 year terms and 65-80% LTV for stabilized commercial properties.</p>
+      <span class="loan-tag tag-blue">65-80% LTV</span>
     </div>
-
     <div class="loan-card">
-      <div class="loan-icon">⏱️</div>
       <h3>Mini-Perm Loan</h3>
       <p>Short-term bridge financing after construction while the property stabilizes and leases up.</p>
       <span class="loan-tag tag-orange">Post-Construction</span>
     </div>
   </div>
 
-  <!-- GOVERNMENT -->
-  <div style="margin-bottom:10px;"><span style="font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.5;">🏛️ Government-Backed</span></div>
+  <!-- CONSTRUCTION & DEVELOPMENT -->
+  <div style="margin-bottom:10px;"><span style="font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.5;">Construction &amp; Development</span></div>
   <div class="loans-grid" style="margin-bottom:40px;">
     <div class="loan-card">
-      <div class="loan-icon">🏛️</div>
+      <h3>Builder / Construction Financing</h3>
+      <p>For established operators. Funds the build for build-to-rent and build-to-sell development projects. Up to 36 months.</p>
+      <span class="loan-tag tag-orange">Up to 36 Months</span>
+    </div>
+  </div>
+
+  <!-- GOVERNMENT-BACKED -->
+  <div style="margin-bottom:10px;"><span style="font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.5;">Government-Backed</span></div>
+  <div class="loans-grid" style="margin-bottom:40px;">
+    <div class="loan-card">
       <h3>SBA 7(a) Loan</h3>
-      <p>Up to $5M for owner-occupied commercial real estate, working capital, and business acquisitions.</p>
-      <span class="loan-tag tag-green">Up to $5M</span>
+      <p>Up to $5MM for owner-user commercial real estate, working capital, and business acquisitions.</p>
+      <span class="loan-tag tag-green">Up to $5MM</span>
     </div>
     <div class="loan-card">
-      <div class="loan-icon">📋</div>
       <h3>SBA 504 Loan</h3>
-      <p>Up to $20M fixed-rate financing for owner-occupied real estate and major equipment purchases.</p>
-      <span class="loan-tag tag-green">Up to $20M</span>
+      <p>Up to $20MM+ fixed-rate financing for owner-user real estate and major equipment purchases.</p>
+      <span class="loan-tag tag-green">Up to $20MM+</span>
+    </div>
+  </div>
+
+  <!-- BRIDGE & SPECIAL -->
+  <div style="margin-bottom:10px;"><span style="font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.5;">Bridge &amp; Special Financing</span></div>
+  <div class="loans-grid" style="margin-bottom:40px;">
+    <div class="loan-card">
+      <h3>Bridge Funding</h3>
+      <p>Fast closing. No financials. 6-18 month term. Value-add and transitional projects. Up to 100% financing.</p>
+      <span class="loan-tag tag-orange">6-18 Month Term</span>
     </div>
     <div class="loan-card">
-      <div class="loan-icon">🌾</div>
-      <h3>USDA B&I Loan</h3>
-      <p>Government-backed financing for businesses and real estate in rural communities.</p>
-      <span class="loan-tag tag-green">Rural Properties</span>
+      <h3>Asset Based Lending</h3>
+      <p>Working capital and business funding secured by hard assets — equipment, receivables, and more.</p>
+      <span class="loan-tag tag-blue">Hard Asset Secured</span>
+    </div>
+    <div class="loan-card">
+      <h3>Equity Based Lending</h3>
+      <p>Private trust deed investing. Allows second position real estate financing.</p>
+      <span class="loan-tag tag-blue">2nd Position</span>
     </div>
   </div>
 
   <!-- AGENCY / MULTIFAMILY -->
-  <div style="margin-bottom:10px;"><span style="font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.5;">🏢 Agency / Multifamily</span></div>
+  <div style="margin-bottom:10px;"><span style="font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.5;">Agency / Multifamily</span></div>
   <div class="loans-grid" style="margin-bottom:40px;">
     <div class="loan-card">
-      <div class="loan-icon">🏢</div>
       <h3>Fannie Mae Multifamily</h3>
       <p>Competitive rates and long-term fixed financing for 5+ unit residential properties.</p>
       <span class="loan-tag tag-blue">5+ Units</span>
     </div>
     <div class="loan-card">
-      <div class="loan-icon">🏘️</div>
-      <h3>Freddie Mac Multifamily</h3>
-      <p>Strong agency financing for larger multifamily portfolios and apartment communities.</p>
-      <span class="loan-tag tag-blue">Portfolio Friendly</span>
+      <h3>Bridge &amp; Agency Multifamily</h3>
+      <p>Capital solutions for partially cash-flowing and stabilized multifamily assets.</p>
+      <span class="loan-tag tag-blue">Stabilized &amp; Value-Add</span>
     </div>
-
   </div>
 
-  
+  <!-- TAILORED ACCESS -->
+  <div style="margin-bottom:10px;"><span style="font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.5;">Creative Capital</span></div>
+  <div class="loans-grid" style="margin-bottom:40px;">
+    <div class="loan-card">
+      <h3>Tailored Access to Capital</h3>
+      <p>Equity and debt. Gap funding. Seller carries. Creative solutions built around your deal — not a box.</p>
+      <span class="loan-tag tag-green">Creative Solutions</span>
+    </div>
+  </div>
 
   <!-- BY PROPERTY TYPE -->
-  <div style="margin-bottom:10px;"><span style="font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.5;">🏗️ By Property Type</span></div>
+  <div style="margin-bottom:10px;"><span style="font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.5;">By Property Type</span></div>
   <div class="loans-grid">
-
     <div class="loan-card">
-      <div class="loan-icon">🏬</div>
       <h3>Retail / Strip Mall</h3>
       <p>Shopping centers, strip malls, single-tenant retail, and mixed retail centers.</p>
       <span class="loan-tag tag-blue">Retail</span>
     </div>
     <div class="loan-card">
-      <div class="loan-icon">🖥️</div>
       <h3>Office</h3>
       <p>Class A, B, and C office buildings — single-tenant and multi-tenant.</p>
       <span class="loan-tag tag-blue">Office</span>
     </div>
     <div class="loan-card">
-      <div class="loan-icon">🏭</div>
       <h3>Industrial / Warehouse</h3>
       <p>Distribution centers, flex space, cold storage, and light manufacturing facilities.</p>
       <span class="loan-tag tag-blue">Industrial</span>
     </div>
     <div class="loan-card">
-      <div class="loan-icon">🏙️</div>
       <h3>Mixed-Use</h3>
       <p>Properties combining residential, retail, and commercial space in one building.</p>
       <span class="loan-tag tag-blue">Mixed-Use</span>
     </div>
     <div class="loan-card">
-      <div class="loan-icon">🏨</div>
       <h3>Hospitality / Hotel</h3>
       <p>Full-service, limited-service, boutique hotels, and extended-stay properties.</p>
       <span class="loan-tag tag-blue">Hospitality</span>
     </div>
-
     <div class="loan-card">
-      <div class="loan-icon">🏘️</div>
       <h3>Mobile Home Parks</h3>
       <p>Manufactured housing community acquisitions, refinances, and expansions.</p>
       <span class="loan-tag tag-blue">Alternative Asset</span>
     </div>
     <div class="loan-card">
-      <div class="loan-icon">⛽</div>
       <h3>Gas Stations / Car Washes</h3>
       <p>Special-use financing for fuel stations, convenience stores, and automated car washes.</p>
       <span class="loan-tag tag-orange">Special Use</span>
     </div>
     <div class="loan-card">
-      <div class="loan-icon">🏥</div>
       <h3>Medical / Healthcare</h3>
       <p>Medical offices, dental practices, urgent care, and healthcare facility financing.</p>
       <span class="loan-tag tag-green">Healthcare</span>
     </div>
-
+    <div class="loan-card">
+      <h3>Auto Service</h3>
+      <p>Auto repair shops, dealerships, service centers, and related special-use properties.</p>
+      <span class="loan-tag tag-orange">Auto</span>
+    </div>
+    <div class="loan-card">
+      <h3>Restaurants</h3>
+      <p>Quick service, full service, and franchise restaurant property financing.</p>
+      <span class="loan-tag tag-orange">Food &amp; Beverage</span>
+    </div>
+    <div class="loan-card">
+      <h3>Assisted Living Facilities</h3>
+      <p>Senior housing, memory care, independent living, and assisted care communities.</p>
+      <span class="loan-tag tag-green">Senior Housing</span>
+    </div>
   </div>
 </section>
 
@@ -424,19 +494,16 @@ footer strong{color:rgba(255,255,255,0.8);}
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <h3>Submit to Lender</h3>
-      <p>We package your file and submit to the best-fit lender from our network of 50+ commercial lenders.</p>
+      <h3>Structure and Submission</h3>
+      <p>We structure and package the file to place with the best-fit capital source from our network of 50+ commercial banks and investors.</p>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <h3>Close & Fund</h3>
-      <p>We manage the process from approval to close — you stay focused on your deal, we handle the rest.</p>
+      <h3>Fund and Close</h3>
+      <p>You stay focused on your client. We manage the process from approval to close and handle the rest.</p>
     </div>
   </div>
 </section>
-
-
-
 
 <!-- LEAD FORM -->
 <section class="form-section" id="contact">
@@ -447,7 +514,6 @@ footer strong{color:rgba(255,255,255,0.8);}
   </div>
   <div class="lead-form">
     <div id="formSuccess">
-      <div style="font-size:3rem;margin-bottom:12px;">✅</div>
       <h3>Got it! Sandra will be in touch within 24 hours.</h3>
       <p>Check your phone — she'll call or text you directly.</p>
     </div>
@@ -480,18 +546,22 @@ footer strong{color:rgba(255,255,255,0.8);}
             <option>Conventional Commercial Mortgage</option>
             <option>Mini-Perm Loan</option>
           </optgroup>
+          <optgroup label="Construction &amp; Development">
+            <option>Builder / Construction Financing</option>
+          </optgroup>
           <optgroup label="Government-Backed">
-            <option>SBA 7(a)</option>
-            <option>SBA 504</option>
-            <option>USDA B&I Loan</option>
+            <option>SBA 7(a) — Up to $5MM</option>
+            <option>SBA 504 — Up to $20MM+</option>
+          </optgroup>
+          <optgroup label="Bridge &amp; Special">
+            <option>Bridge Funding</option>
+            <option>Asset Based Lending</option>
+            <option>Equity Based Lending</option>
           </optgroup>
           <optgroup label="Agency / Multifamily">
             <option>Fannie Mae Multifamily</option>
-            <option>Freddie Mac Multifamily</option>
-            
+            <option>Bridge &amp; Agency Multifamily</option>
           </optgroup>
-
-
           <optgroup label="By Property Type">
             <option>Retail / Strip Mall</option>
             <option>Office</option>
@@ -501,6 +571,9 @@ footer strong{color:rgba(255,255,255,0.8);}
             <option>Mobile Home Parks</option>
             <option>Gas Station / Car Wash</option>
             <option>Medical / Healthcare</option>
+            <option>Auto Service</option>
+            <option>Restaurant</option>
+            <option>Assisted Living Facility</option>
           </optgroup>
           <option>Other</option>
         </select>
@@ -519,7 +592,7 @@ footer strong{color:rgba(255,255,255,0.8);}
         <label>Tell us about your deal (optional)</label>
         <textarea id="notes" placeholder="Property type, current status, timeline, anything else..."></textarea>
       </div>
-      <button type="submit" id="leadSubmitBtn" class="submit-btn" disabled>Submit My Deal →</button>
+      <button type="submit" id="leadSubmitBtn" class="submit-btn" disabled>Submit My Deal</button>
       <div class="form-disclaimer">By submitting, you agree to be contacted by Sandra Navarro regarding your commercial loan inquiry. We respect your privacy and never sell your information.</div>
     </form>
   </div>
@@ -548,12 +621,11 @@ footer strong{color:rgba(255,255,255,0.8);}
 <script>
 function checkScenarioForm() {
   const btn = document.getElementById('scenarioSubmitBtn');
-  const required = ['s_fname','s_lname','s_phone','s_email','s_loanType','s_loanAmount','s_notes'];
-  const timeline = document.querySelector('input[name="timeline"]:checked');
+  const required = ['s_fname','s_lname','s_phone','s_email','s_need','s_occupancy','s_loanType','s_loanAmount','s_notes'];
   const allFilled = required.every(id => {
     const el = document.getElementById(id);
     return el && el.value.trim() !== '';
-  }) && timeline;
+  });
   if (allFilled) {
     btn.disabled = false;
     btn.style.background = '#ffffff';
@@ -567,11 +639,10 @@ function checkScenarioForm() {
   }
 }
 document.addEventListener('DOMContentLoaded', function() {
-  ['s_fname','s_lname','s_phone','s_email','s_loanType','s_loanAmount','s_notes'].forEach(id => {
+  ['s_fname','s_lname','s_phone','s_email','s_need','s_occupancy','s_loanType','s_loanAmount','s_notes'].forEach(id => {
     const el = document.getElementById(id);
     if (el) { el.addEventListener('input', checkScenarioForm); el.addEventListener('change', checkScenarioForm); }
   });
-  document.querySelectorAll('input[name="timeline"]').forEach(r => r.addEventListener('change', checkScenarioForm));
   checkScenarioForm();
 });
 
@@ -583,6 +654,8 @@ function submitScenario(e) {
     name: document.getElementById('s_fname').value + ' ' + document.getElementById('s_lname').value,
     phone: document.getElementById('s_phone').value,
     email: document.getElementById('s_email').value,
+    need: document.getElementById('s_need').value,
+    occupancy: document.getElementById('s_occupancy').value,
     loanType: document.getElementById('s_loanType').value,
     loanAmount: document.getElementById('s_loanAmount').value,
     propType: document.getElementById('s_propType').value,
@@ -594,9 +667,7 @@ function submitScenario(e) {
     source: 'allincre.co',
     timestamp: new Date().toISOString()
   };
-  // Send to our server (Telegram alert)
   fetch('/api/lead', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) }).catch(()=>{});
-  // Send to Sandra via Formspree
   const fd = new FormData();
   Object.entries(data).forEach(([k,v]) => fd.append(k, v));
   fetch('https://formspree.io/f/mkodydvp', { method:'POST', body:fd, headers:{Accept:'application/json'} }).catch(()=>{});
@@ -604,7 +675,6 @@ function submitScenario(e) {
   document.getElementById('scenarioSuccess').style.display = 'block';
 }
 
-// Required fields validation for lead form
 function checkLeadForm() {
   const btn = document.getElementById('leadSubmitBtn');
   const fields = ['fname','lname','phone','email','loanType'];
@@ -634,19 +704,11 @@ function submitForm(e) {
     source: 'allincre.co',
     timestamp: new Date().toISOString()
   };
-
-  // Send to backend
-  fetch('/api/lead', {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify(data)
-  }).catch(()=>{});
-
+  fetch('/api/lead', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) }).catch(()=>{});
   document.getElementById('leadForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 }
 
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
